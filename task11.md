@@ -22,5 +22,9 @@ Deny uploads if server-side encryption is not enabled
 After adding the JSON policy, I saved the changes successfully , so this was the final output.
 <img width="1920" height="1200" alt="Screenshot from 2026-04-04 15-06-27" src="https://github.com/user-attachments/assets/b8a2aa39-1970-4277-8954-4b0cb0b995a0" />
 
+5.)When I tried to delete the object, it showed “Access Denied”. This means the delete restriction is working properly as per the bucket policy.-
+<img width="1920" height="1200" alt="Screenshot from 2026-04-04 15-24-37" src="https://github.com/user-attachments/assets/0a89feb9-835f-42df-99d3-10967cd20b4d" />
+
+
 RESULT-The S3 bucket policy was successfully configured to allow uploads only in the /uploads/ folder, deny deletion, and enforce server-side encryption.
 
