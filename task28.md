@@ -74,7 +74,63 @@ Only the public subnet was selected, and the private subnet was not selected to 
 <img width="1919" height="828" alt="Screenshot from 2026-04-29 08-46-28" src="https://github.com/user-attachments/assets/073c29fa-834e-4d3f-a7b3-14d5ba680bff" />
 <img width="1904" height="957" alt="Screenshot from 2026-04-29 08-46-47" src="https://github.com/user-attachments/assets/438158cc-334a-4cc5-920b-8628641ff34e" />
 
-7.)
+7.) VPC Peering Connection Setup
+In this step, a VPC peering connection was created between VPC-1 and VPC-2.
+Requester VPC: VPC-1 (10.0.0.0/16)
+Accepter VPC: VPC-2 (20.0.0.0/16)
+Region: Same (ap-southeast-2)
+The peering request was created and then accepted successfully.
+This allows private communication between resources of both VPCs.
+<img width="1364" height="696" alt="Screenshot from 2026-04-30 01-33-39" src="https://github.com/user-attachments/assets/8c40596f-ca66-4ae6-ae6d-f540fb5ce829" />
+<img width="1339" height="667" alt="Screenshot from 2026-04-30 01-34-28" src="https://github.com/user-attachments/assets/c80d79e2-7d24-41fa-b455-bbd93c519f3c" />
+<img width="1660" height="740" alt="Screenshot from 2026-04-30 01-35-32" src="https://github.com/user-attachments/assets/e09baf58-6d82-4cb4-9dc1-3a5b5d965e33" />
+<img width="1352" height="731" alt="Screenshot from 2026-04-30 01-36-22" src="https://github.com/user-attachments/assets/b7a5d2bb-50f7-4357-b02d-2ec240a5c9e7" />
+
+8.) To enable communication between the two VPCs, routes were added:
+In VPC-1 route table:-
+Destination: 20.0.0.0/16
+Target:- VPC Peering Connection
+In VPC-2 route table:
+Destination: 10.0.0.0/16
+Target:- VPC Peering Connection
+This ensures bidirectional traffic flow between both VPCs.
+<img width="1318" height="580" alt="Screenshot from 2026-04-30 01-39-37" src="https://github.com/user-attachments/assets/7d412ca6-1556-4912-a962-b1e40ba18545" />
+<img width="1356" height="535" alt="Screenshot from 2026-04-30 01-40-21" src="https://github.com/user-attachments/assets/c87df600-ff50-44de-8ac3-14e82ab9ed8d" />
+<img width="1322" height="451" alt="Screenshot from 2026-04-30 01-41-04" src="https://github.com/user-attachments/assets/31ee20b0-3819-4b23-814b-fc90014ed1b9" />
+<img width="1361" height="533" alt="Screenshot from 2026-04-30 01-41-47" src="https://github.com/user-attachments/assets/6e5a8940-102c-4ec1-a8a8-af9f9c4ffd3a" />
+
+9.) Instances were launched in both VPCs:
+Bastion Host (Public Subnet in VPC-1)
+Private EC2 (Private Subnet in VPC-1)
+Private EC2 (Private Subnet in VPC-2)
+<img width="1362" height="696" alt="Screenshot from 2026-04-30 01-44-51" src="https://github.com/user-attachments/assets/62595f5e-d14f-46a8-b19b-8016d7759b98" />
+
+7.) 8.) 8.) SSH connectivity was successfully established across instances.
+
+Step 1: Connected from local machine to Bastion Host  
+Step 2: Connected from Bastion Host to Private EC2 (10.0.2.200)
+This confirms that internal VPC communication is working properly.
+<img width="834" height="386" alt="SSH Connectivity Screenshot" src="YOUR_SSH_SS_LINK" />
+<img width="834" height="386" alt="Screenshot from 2026-04-30 01-48-43" src="https://github.com/user-attachments/assets/dc4d827d-433d-4280-9c67-fa3217d35218" />
+
+8.) 9.) so my Cross VPC communication was verified using private IP.
+Command that i used here is 
+ssh ec2-user@20.0.1.161
+<img width="151" height="16" alt="Screenshot from 2026-04-30 02-00-44" src="https://github.com/user-attachments/assets/775806dc-43c3-4c9b-8fa7-1ac6501c7e45" />
+
+RESULT- VPC peering was successfully configured, and secure SSH communication between instances in both VPCs was achieved.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
