@@ -15,7 +15,9 @@ What I did: is that . I Opened CloudWatch Went to Logs and select Log Groups the
 <img width="1920" height="1200" alt="Screenshot from 2026-04-25 15-12-11" src="https://github.com/user-attachments/assets/df99e189-f8fe-44d8-a240-d89865aee149" />
 <img width="1920" height="1200" alt="Screenshot from 2026-04-25 15-18-33" src="https://github.com/user-attachments/assets/e79a359a-c4f5-47c5-9388-7a1a5468b9fa" />
 
-3.)
+3.)And the metric and alarm was created for the same.
+
+RESULT- The task was performed and implemented.
 
 
 
