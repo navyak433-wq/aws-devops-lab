@@ -2,11 +2,12 @@ OBJECTIVE:-The objective of this task was to configure path-based routing using 
 
 STEPS PERFORMED:-
 
-1.)Created Target Groups
+1.) So, my first step was ,i created an Application Load Balancer (ALB) with:
+the Scheme was  Internet-facing
+Protocol was  HTTP (port 80)
+Subnets was  Selected default VPC subnets
+Then I attached the target groups to the load balancer.
+<img width="1371" height="651" alt="Screenshot from 2026-04-30 08-24-32" src="https://github.com/user-attachments/assets/a079406c-faeb-4ad2-b490-6d416f817514" />
+<img width="1355" height="710" alt="Screenshot from 2026-04-30 08-27-17" src="https://github.com/user-attachments/assets/05adf68f-9c6c-44c8-99ce-c30af438e6ee" /> (video-tg)
 
-First, I created two target groups:
-One for handling image requests
-One for handling video requests
-Both target groups were configured with HTTP protocol on port 80.
-<img width="1402" height="809" alt="Screenshot from 2026-04-03 23-04-55" src="https://github.com/user-attachments/assets/cf18a9b4-689c-4425-9262-ddd0bf39a77a" />
 
